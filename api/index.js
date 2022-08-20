@@ -17,7 +17,7 @@ class ServerAPI {
             console.log(`[api] (api.index.initialize) >`, err);
         }
         finally {
-            console.log(`[api] api server initialized >> http://localhost:${SERVERAPI_PORT}/`);
+            console.log(`[api] api server initialized on port "${SERVERAPI_PORT}" >> http://localhost:${SERVERAPI_PORT}/`);
         }
     }
 

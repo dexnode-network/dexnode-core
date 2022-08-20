@@ -1,5 +1,6 @@
+const DB_PATH = process.env.DB_PATH || __dirname + '/blockchain';
 const GENESIS_BLOCK = {
-    height: 0,
+    height: -1,
     version: 1,
     timestamp: 1661010297806,
     lastHash: 'last-hash',
@@ -11,11 +12,14 @@ const GENESIS_BLOCK = {
     data: []
 }
 
-const DB_PATH = process.env.DB_PATH || __dirname + '/blockchain';
-
 const SERVERP2P_PORT = process.env.SERVERP2P_PORT || 5000;
+
 const SERVERAPI_PORT = process.env.SERVERAPI_PORT || 3000;
 
 module.exports = {
-    GENESIS_BLOCK, DB_PATH, SERVERP2P_PORT, SERVERAPI_PORT
+    DB_PATH, GENESIS_BLOCK,
+    
+    SERVERP2P_PORT,
+    
+    SERVERAPI_PORT
 }

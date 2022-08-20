@@ -19,6 +19,8 @@ class Blockchain {
         }
         finally {
             console.log(`[sys] blockchain database initialized !`);
+            const block = Block.genesisBlock();
+            console.log(block.toString());
         }
     }
 }

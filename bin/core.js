@@ -8,9 +8,17 @@ const apiserver = new ServerAPI();
 
 (async () => {
 
-    await blockchain.initializeASYNC();
-    await network.initializeASYNC();
-    await apiserver.initializeASYNC();
+    try {
+        await blockchain.initializeASYNC();
+        await network.initializeASYNC();
+        await apiserver.initializeASYNC();
+    }
+    catch (err) {
+        //
+    }
+    finally {
+        console.log(`[sys] all system up, ready for decentralize fed !`);
+    }
 
 })().catch(err => {
 

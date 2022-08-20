@@ -1,6 +1,6 @@
-const Utils = require('../utils');
-
 const { GENESIS_BLOCK } = require('../config');
+
+const Utils = require('../utils');
 
 class Block {
     constructor ({ height, version, timestamp, lastHash, hash, difficulty, bits, nonce, merkleRoot, data }) {
@@ -16,7 +16,7 @@ class Block {
         this.data = data;
     }
 
-    static toString() {
+    toString() {
         return `Block(${this.height}) hash: ${this.hash}`;
     }
 
@@ -24,7 +24,7 @@ class Block {
         return new this(GENESIS_BLOCK);
     }
 
-    async mineBlock() {
+    async mineBlock({ lastBlock, startNonce, stopNonce, data }) {
         return '';
     }
 }
