@@ -22,7 +22,7 @@ class ServerAPI {
     }
 
     async onServerGetHome(req, res) {
-        res.send('nice');
+        res.send('DEXNODE API 1.0');
     }
 }
 

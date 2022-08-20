@@ -2,6 +2,8 @@ const db = require('lmdb');
 
 const { DB_PATH } = require('../config');
 
+const Block = require('./block');
+
 class Blockchain {
     constructor () {
         this.chain;
