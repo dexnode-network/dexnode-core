@@ -5,15 +5,15 @@ class Utils {
         //
     }
 
-    async hash({height, version, lastHash, difficulty, bits, nonce, merkleRoot, data}) {
+    static hash({height, version, lastHash, difficulty, bits, nonce, merkleRoot, data}) {
         return SHA256(`${height}${version}${lastHash}${difficulty}${bits}${nonce}${merkleRoot}${data}`, 'hex').toString();
     }
 
-    async hashData(data) {
+    static hashData(data) {
         return SHA256(data,'hex').toString();
     }
 
-    async hashBlock(block) {
+    static hashBlock(block) {
         const { height, version, lastHash, difficulty, bits, nonce, merkleRoot, data } = block;
         return this.hash({ height, version, lastHash, difficulty, bits, nonce, merkleRoot, data });
     }

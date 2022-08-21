@@ -6,7 +6,7 @@ const GENESIS_BLOCK = {
     lastHash: 'last-hash',
     hash: 'genesis-hash',
     difficulty: 1,
-    bits: '1D00FFFF',
+    bits: '1EFFFFFF',
     nonce: 0,
     merkleRoot: '',
     data: []

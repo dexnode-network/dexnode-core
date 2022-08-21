@@ -1,7 +1,8 @@
 const { SERVERP2P_PORT } = require('../config');
 
 class Network {
-    constructor () {
+    constructor (blockchain) {
+        this.blockchain = blockchain;
         this.server;
     }
 
