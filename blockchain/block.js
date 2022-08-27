@@ -32,19 +32,19 @@ class Block {
         const bits = lastBlock.bits;
         const target = Utils.bitsToTarget(bits);
 
-        const merkleRoot = Utils.hashData(JSON.stringify(data));
+        const merkleRoot = Utils.hashData(JSON.stringify(data)+Date.now());
 
         for (let i=startNonce; i<stopNonce; i++) {
-            console.log(i);
             const nonce = i;
             const hash = Utils.hash({ height, version, lastHash, difficulty, bits, nonce, merkleRoot, data });
             if (Utils.isHashLower(target, hash)) {
-                console.log(`found`);
                 const timestamp = Date.now();
                 const block = new this({ height, version, timestamp, lastHash, hash, difficulty, bits, nonce, merkleRoot, data });
                 return block;
             }
         }
+
+        return undefined;
     }
 }
 

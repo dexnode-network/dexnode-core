@@ -1,14 +1,14 @@
 const DB_PATH = process.env.DB_PATH || __dirname + '/blockchain';
 const GENESIS_BLOCK = {
-    height: -1,
+    height: 0,
     version: 1,
-    timestamp: 1661010297806,
-    lastHash: 'last-hash',
-    hash: 'genesis-hash',
+    timestamp: 1661236307396,
+    lastHash: 'DEXNODE-NETWORK-2022-08-22',
+    hash: 'ea2ee0552731c25e96629e462f1c3e1ac1a8a61c73df050b591d2d7133fbda6d',
     difficulty: 1,
-    bits: '1EFFFFFF',
+    bits: '1effffff',
     nonce: 0,
-    merkleRoot: '',
+    merkleRoot: 'merkle-hash',
     data: []
 }
 
