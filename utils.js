@@ -1,10 +1,6 @@
 const SHA256 = require('crypto-js/sha256');
 
 class Utils {
-    constructor () {
-        //
-    }
-
     static hash({height, version, lastHash, difficulty, bits, nonce, merkleRoot, data}) {
         return SHA256(`${height}${version}${lastHash}${difficulty}${bits}${nonce}${merkleRoot}${data}`, 'hex').toString();
     }
@@ -35,6 +31,10 @@ class Utils {
         const targetBuffer = Buffer.from(target, 'hex');
         const hashBuffer = Buffer.from(hash, 'hex');
         return Buffer.compare(targetBuffer, hashBuffer) > 0;
+    }
+
+    static formatedIp(ip) {
+        return ip.replace(/^.*:/, '');
     }
 }
 

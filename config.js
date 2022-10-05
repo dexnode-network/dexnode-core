@@ -1,4 +1,5 @@
-const DB_PATH = process.env.DB_PATH || __dirname + '/blockchain';
+const DB_PATH = process.env.DB_PATH || '/db';
+
 const GENESIS_BLOCK = {
     height: 0,
     version: 1,
@@ -16,10 +17,14 @@ const SERVERP2P_PORT = process.env.SERVERP2P_PORT || 5000;
 
 const SERVERAPI_PORT = process.env.SERVERAPI_PORT || 3000;
 
+const PEERS_LIST = process.env.PEERS_LIST ? process.env.PEERS_LIST.split(','): [];
+
 module.exports = {
     DB_PATH, GENESIS_BLOCK,
     
     SERVERP2P_PORT,
     
-    SERVERAPI_PORT
+    SERVERAPI_PORT,
+
+    PEERS_LIST
 }

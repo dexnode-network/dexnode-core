@@ -9,15 +9,12 @@ const apiserver = new ServerAPI(blockchain, network);
 (async () => {
 
     try {
-        await blockchain.initializeASYNC();
-        await network.initializeASYNC();
-        await apiserver.initializeASYNC();
+        const blockchainState = await blockchain.initializeASYNC();
+        const networkState = await network.initializeASYNC();
+        const apiserverState = await apiserver.initializeASYNC();
     }
     catch (err) {
         console.log(`[sys] (bin.core.entry) fatal error >`, err);
-    }
-    finally {
-        console.log(`[sys] all system up, ready for decentralize fed !`);
     }
 
 })().catch(err => {

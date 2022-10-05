@@ -11,7 +11,7 @@ class Blockchain {
 
     async initializeASYNC() {
         console.log(`[sys] initialize blockchain database ...`);
-        this.chain = db.open(DB_PATH, { create: true });
+        this.chain = db.open(__dirname + DB_PATH, { create: true });
 
         if (await this.getChainHeightASYNC() <= 0)
             await this.addBlockASYNC(Block.genesisBlock());
@@ -32,11 +32,11 @@ class Blockchain {
     }
 
     async getLastBlockASYNC() {
-        return new Block(JSON.parse(this.chain.get(this.chain.getCount()-1)));
+        return new Block(JSON.parse(await this.chain.get(this.chain.getCount()-1)));
     }
 
     async getBlockFromHeight(height) {
-        return new Block(JSON.parse(this.chain.get(height)));
+        return new Block(JSON.parse(await this.chain.get(height)));
     }
 
     async getBlockFromHash(hash) {

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "core": "node ./bin/core.js",
+    "core": "PEERS_LIST=127.0.0.1:5001 node ./bin/core.js",
+    "core1": "DB_PATH=/db1 SERVERP2P_PORT=5001 SERVERAPI_PORT=3001 PEERS_LIST=127.0.0.1:5000 node ./bin/core.js",
     "dev": "nodemon ./bin/core.js"
   },
   "repository": {
@@ -21,7 +22,8 @@
   "dependencies": {
     "crypto-js": "^4.1.1",
     "express": "^4.18.1",
-    "lmdb": "^2.6.0-alpha5"
+    "lmdb": "^2.6.0-alpha5",
+    "ws": "^8.9.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
